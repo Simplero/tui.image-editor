@@ -1,5 +1,5 @@
 /**
- * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
+ * @author NHN Ent. FE Development Team <dl_javascript@nhn.com>
  * @fileoverview Component interface
  */
 
@@ -27,7 +27,6 @@ class Component {
 
     /**
      * Fire Graphics event
-     * @param {Array} args - arguments
      * @returns {Object} return value
      */
     fire(...args) {

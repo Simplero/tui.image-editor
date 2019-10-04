@@ -1,5 +1,5 @@
 /**
- * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
+ * @author NHN Ent. FE Development Team <dl_javascript@nhn.com>
  * @fileoverview Image flip module
  */
 import snippet from 'tui-code-snippet';
@@ -37,7 +37,7 @@ class Flip extends Component {
     /**
      * Set flipX, flipY
      * @param {{flipX: Boolean, flipY: Boolean}} newSetting - Flip setting
-     * @returns {jQuery.Deferred}
+     * @returns {Promise}
      */
     set(newSetting) {
         const setting = this.getCurrentSetting();
@@ -75,7 +75,7 @@ class Flip extends Component {
         if (isChangingFlipY) {
             angle *= -1;
         }
-        canvasImage.setAngle(parseFloat(angle)).setCoords();// parseFloat for -0 to 0
+        canvasImage.rotate(parseFloat(angle)).setCoords();// parseFloat for -0 to 0
     }
 
     /**
@@ -110,7 +110,7 @@ class Flip extends Component {
 
     /**
      * Reset flip settings
-     * @returns {jQuery.Deferred}
+     * @returns {Promise}
      */
     reset() {
         return this.set({
@@ -121,7 +121,7 @@ class Flip extends Component {
 
     /**
      * Flip x
-     * @returns {jQuery.Deferred}
+     * @returns {Promise}
      */
     flipX() {
         const current = this.getCurrentSetting();
@@ -134,7 +134,7 @@ class Flip extends Component {
 
     /**
      * Flip y
-     * @returns {jQuery.Deferred}
+     * @returns {Promise}
      */
     flipY() {
         const current = this.getCurrentSetting();

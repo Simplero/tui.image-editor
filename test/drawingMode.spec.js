@@ -1,8 +1,7 @@
 /**
- * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
+ * @author NHN Ent. FE Development Team <dl_javascript@nhn.com>
  * @fileoverview Test cases of "src/js/imageEditor.js"
  */
-import $ from 'jquery';
 import ImageEditor from '../src/js/imageEditor';
 
 describe('DrawingMode', () => {
@@ -10,7 +9,7 @@ describe('DrawingMode', () => {
     const imageURL = 'base/test/fixtures/sampleImage.jpg';
 
     beforeEach(done => {
-        imageEditor = new ImageEditor($('<div></div>'), {
+        imageEditor = new ImageEditor(document.createElement('div'), {
             cssMaxWidth: 700,
             cssMaxHeight: 500
         });

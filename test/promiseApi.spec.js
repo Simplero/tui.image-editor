@@ -1,8 +1,7 @@
 /**
- * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
+ * @author NHN Ent. FE Development Team <dl_javascript@nhn.com>
  * @fileoverview Test cases of "src/js/component/filter.js"
  */
-import $ from 'jquery';
 import ImageEditor from '../src/js/imageEditor';
 
 describe('Promise API', () => {
@@ -10,7 +9,7 @@ describe('Promise API', () => {
     const imageURL = 'base/test/fixtures/sampleImage.jpg';
 
     beforeAll(() => {
-        imageEditor = new ImageEditor($('<div></div>'), {
+        imageEditor = new ImageEditor(document.createElement('div'), {
             cssMaxWidth: 700,
             cssMaxHeight: 500
         });
@@ -66,7 +65,7 @@ describe('Promise API', () => {
             top: 10
         }).then(() => imageEditor.changeIconColor(activeObjectId, '#FFFF00')
         ).then(() => {
-            expect(canvas.getObjects()[0].getFill()).toBe('#FFFF00');
+            expect(canvas.getObjects()[0].fill).toBe('#FFFF00');
             done();
         })['catch'](message => {
             fail(message);
@@ -84,7 +83,7 @@ describe('Promise API', () => {
             expect(shape.type).toBe('rect');
             expect(shape.width).toBe(100);
             expect(shape.height).toBe(100);
-            expect(shape.getFill()).toBe('#FFFF00');
+            expect(shape.fill).toBe('#FFFF00');
             done();
         })['catch'](message => {
             fail(message);
@@ -105,7 +104,7 @@ describe('Promise API', () => {
             const [shape] = canvas.getObjects();
             expect(shape.type).toBe('triangle');
             expect(shape.width).toBe(200);
-            expect(shape.getFill()).toBe('#FF0000');
+            expect(shape.fill).toBe('#FF0000');
             done();
         })['catch'](message => {
             fail(message);
