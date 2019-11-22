@@ -32,8 +32,6 @@ module.exports = {
     /***
      *  Simplero customization: We want as much JS included as possible
      *  when running `npm run bundle`, so don't mark these as external. 
-     *  fabric would be nice too but including it results in 
-     *  "_fabric2.default.util is undefined".
      */
     externals: {/*
         'tui-code-snippet': {
@@ -47,13 +45,13 @@ module.exports = {
             'commonjs2': 'tui-color-picker',
             'amd': 'tui-color-picker',
             'root': ['tui', 'colorPicker']
-        },*/
+        },
         'fabric': {
             'commonjs': ['fabric', 'fabric'],
             'commonjs2': ['fabric', 'fabric'],
             'amd': 'fabric',
             'root': 'fabric'
-        }
+        }*/
     },
     module: {
         preLoaders: [
